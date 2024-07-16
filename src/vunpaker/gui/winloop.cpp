@@ -1,13 +1,9 @@
 #include <vunpaker/gui/winloop.h>
-#include <vunpaker/gui/imgui.h>
+#include <vunpaker/gui/vpk_imgui.h>
 
 void vpk::gui::loop(GLFWwindow* window, CreateFunction_t create, LoopConditionFunction_t condition) {
     // Defines
     ImGuiIO& io = ImGui::GetIO();
-
-    // Our state
-    bool show_demo_window = true;
-    bool show_another_window = true;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     // Main loop
@@ -30,15 +26,20 @@ void vpk::gui::loop(GLFWwindow* window, CreateFunction_t create, LoopConditionFu
         // Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
+
+        // Create flags
+        constexpr int WINDOW_FLAGS = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_UnsavedDocument;
+
+        // Create Window
         ImGui::NewFrame();
 
-        // 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
         {
+            // Execute the create function
             create();
+
+            // Update the button
+            vpk::gui::imgui_update(window, clear_color);
         }
-
-
-        vpk::gui::imgui_update(window, clear_color);
     }
 #ifdef __EMSCRIPTEN__
     EMSCRIPTEN_MAINLOOP_END;

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\ImGui">
+      <UniqueIdentifier>{cb96312d-3de2-4ed0-9f6c-36bd470d475a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ImGui">
+      <UniqueIdentifier>{454a5879-8a2d-4c01-a20d-7c8f9e10ac83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GLFW">
+      <UniqueIdentifier>{f46a7a41-9118-4384-a6e6-b73fdfff9486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ImGui\backends">
+      <UniqueIdentifier>{44e1d7cd-a4c8-4ad7-9c0b-2754fad524d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImGui\backends">
+      <UniqueIdentifier>{943a9fde-5700-49a9-b917-baa4f48f72d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\VPK">
+      <UniqueIdentifier>{4bc719fd-7266-407f-b6cd-32dde90ff8ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\VPK">
+      <UniqueIdentifier>{1e4bf890-8492-48d3-8be5-cfa1c65aeb42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\VPK\GUI">
+      <UniqueIdentifier>{e8bec36e-f1fa-473b-83be-affe2debb46d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\VPK\GUI">
+      <UniqueIdentifier>{65a9cc68-5d1c-47fc-a17f-a7e706e8735c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NFD">
+      <UniqueIdentifier>{f1e23ee8-af4a-4526-9a86-d9f63b915b27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NFD">
+      <UniqueIdentifier>{02c26be0-40bb-4256-a59f-a7bbb82c1d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\NFD\include">
+      <UniqueIdentifier>{ea7ddc97-b872-454c-a74f-2634360674f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_demo.cpp">
+      <Filter>Source Files\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_draw.cpp">
+      <Filter>Source Files\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_tables.cpp">
+      <Filter>Source Files\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui_widgets.cpp">
+      <Filter>Source Files\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\imgui.cpp">
+      <Filter>Source Files\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>Source Files\ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\backends\imgui_impl_opengl2.cpp">
+      <Filter>Source Files\ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui\backends\imgui_impl_glfw.cpp">
+      <Filter>Source Files\ImGui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vunpaker\vpk.cpp">
+      <Filter>Source Files\VPK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vunpaker\vpk_structs.cpp">
+      <Filter>Source Files\VPK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vunpaker\file.cpp">
+      <Filter>Source Files\VPK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vunpaker\gui\WindowClass.cpp">
+      <Filter>Source Files\VPK\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\nativefiledialog\src\nfd_win.cpp">
+      <Filter>Source Files\NFD</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\nativefiledialog\src\nfd_common.c">
+      <Filter>Source Files\NFD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vunpaker\gui\vpk_nfd.cpp">
+      <Filter>Source Files\VPK\GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\glfw\include\GLFW\glfw3.h">
+      <Filter>Header Files\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\glfw\include\GLFW\glfw3native.h">
+      <Filter>Header Files\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imconfig.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imgui.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imgui_internal.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_rectpack.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_textedit.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\imstb_truetype.h">
+      <Filter>Header Files\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_sdl3.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_sdlrenderer2.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_sdlrenderer3.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_vulkan.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_wgpu.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_win32.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_allegro5.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_android.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_dx9.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_dx10.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_dx11.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_dx12.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_glfw.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_glut.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_metal.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_opengl2.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_opengl3.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_opengl3_loader.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_osx.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui\backends\imgui_impl_sdl2.h">
+      <Filter>Header Files\ImGui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\vpk_glfw.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\vpk_imgui.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\winloop.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\framework.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\vpk.h">
+      <Filter>Header Files\VPK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\file.h">
+      <Filter>Header Files\VPK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\vpk_structs.h">
+      <Filter>Header Files\VPK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\WindowClass.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\nativefiledialog\src\common.h">
+      <Filter>Header Files\NFD</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\nativefiledialog\src\nfd_common.h">
+      <Filter>Header Files\NFD</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\nativefiledialog\src\simple_exec.h">
+      <Filter>Header Files\NFD</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\nativefiledialog\src\include\nfd.h">
+      <Filter>Header Files\NFD\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vunpaker\gui\vpk_nfd.h">
+      <Filter>Header Files\VPK\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\nativefiledialog\src\nfd_cocoa.m">
+      <Filter>Source Files\NFD</Filter>
+    </None>
+  </ItemGroup>
+</Project>

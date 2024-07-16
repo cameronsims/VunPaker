@@ -12,21 +12,7 @@
 
 namespace vpk {
 
-    struct DirectoryNode {
-        /// The name of the file
-        std::string name;
-
-        /// Parent of the file
-        DirectoryNode* parent;
-
-        /// Children of the file
-        std::vector<DirectoryNode> children;
-    };
-
-
-
-
-    struct VPKHeader_v1 {
+    struct Header_v1 {
         /// Signature of header
         uint32_t signature; // Should be 0x[55][aa][12][34];
 
@@ -40,7 +26,7 @@ namespace vpk {
 
 
 
-    struct VPKHeader_v2 : VPKHeader_v1 {
+    struct Header_v2 : Header_v1 {
         /// Version of VPKHeader
         uint32_t version = 2;
 
@@ -64,9 +50,7 @@ namespace vpk {
 
 
 
-    struct VPKDirectoryEntry {
-        /// Terminator character
-        constexpr static uint16_t TERMINATOR = 0xffff;
+    struct DirectoryEntry {
 
         /// 32-bit CRC of the files data
         uint32_t crc;
@@ -101,7 +85,7 @@ namespace vpk {
 
         /// Checksum
         char md5_checksum[VPK_MD5_CHECKSUM_SIZE]; // expected checksum
-    } VPKArchiveMD5SectionEntry;
+    } ArchiveMD5SectionEntry;
 
 
 
@@ -115,7 +99,7 @@ namespace vpk {
 
         /// The checksum of the whole file
         char whole_file_checksum[VPK_MD5_CHECKSUM_SIZE];
-    }VPKOtherMD5SectionEntry;
+    } OtherMD5SectionEntry;
 
 
 
@@ -126,25 +110,36 @@ namespace vpk {
 
         uint32_t signature_size; // always seen as 128 (0x80) bytes
         char* signature;
-    } VPKSignatureSectionEntry;
+    } SignatureSectionEntry;
 
 
+    struct DirectoryNode {
+        /// The VPK data
+        DirectoryEntry data;
+
+        /// The directory/path/name.ext in wchar_t
+        wchar_t file[_MAX_PATH];
+    };
 
 
     typedef struct {
         /// The Header of the VPK
-        VPKHeader_v2 header;
+        Header_v2 header;
 
         /// The Directory Entry
-        VPKDirectoryEntry tree;
+        std::vector<DirectoryNode> tree;
 
         /// Data Section
-        VPKArchiveMD5SectionEntry archive;
+        ArchiveMD5SectionEntry archive;
 
         /// Other MD5 Section
-        VPKOtherMD5SectionEntry other;
+        OtherMD5SectionEntry other;
 
         /// Signature Section
-        VPKSignatureSectionEntry signature;
+        SignatureSectionEntry signature;
     } VPK;
+
+
+
+
 }
