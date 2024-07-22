@@ -4,6 +4,8 @@
 
 #include <functional>
 
+//#define VPK_PRINT_DIRECTORY
+
 namespace vpk {
 
     namespace file {
@@ -26,6 +28,12 @@ namespace vpk {
             const char* what() const;
         };
 
+        class UnexpectedName : UnexpectedToken {
+        public:
+            UnexpectedName();
+            const char* what() const;
+        };
+
         uint32_t get2Bytes(FILE* file, vpk::VPK& vpk);
 
         uint32_t get4Bytes(FILE* file, vpk::VPK& vpk);
@@ -38,21 +46,31 @@ namespace vpk {
 
         void getExtension(FILE* file, vpk::VPK& vpk, char** ext, const std::function<void(size_t)>& fun);
 
-        void getDirectory(FILE* file, vpk::VPK& vpk, char** dir, const std::function<void(size_t)>& fun);
+        void getDirectory(FILE* file, vpk::VPK& vpk, const wchar_t* const directory, char** dir, const std::function<void(size_t)>& fun);
 
-        vpk::DirectoryEntry getDirectoryEntry(FILE* file, vpk::VPK& vpk, char** fnm, const std::function<void(size_t)>& fun);
-
-        void checkTermination(FILE* file, char** ext, char** dir, const std::function<void(size_t)>& fun);
+        vpk::DirectoryEntry getDirectoryEntry(FILE* file, vpk::VPK& vpk, const wchar_t* const directory, const char* const ext, const char* const dir, char** fnm, const std::function<void(size_t)>& fun);
 
 
+        enum class TerminationType {
+            NONE = 0,
+            DIRECTORY = 1,
+            EXTENSION = 2,
+            TREE = 3
+        };
 
-        void extractHeader(FILE* file, vpk::VPK& vpk);
+        TerminationType checkTermination(FILE* file, char** ext, char** dir, const std::function<void(size_t)>& fun);
 
-        void extractBody(FILE* file, vpk::VPK& vpk);
 
-        void extractFooter(FILE* file, vpk::VPK& vpk);
 
-        void read(const wchar_t* fileName);
+        void extractHeader(FILE* file, vpk::VPK& vpk, const wchar_t* directory);
+
+        void extractBody(FILE* file, vpk::VPK& vpk, const wchar_t* directory);
+
+        void extractFooter(FILE* file, vpk::VPK& vpk, const wchar_t* directory);
+
+        void extractFileName(const wchar_t* newDirectory, const wchar_t* fileLocation, wchar_t* buffer);
+
+        void read(const wchar_t* directory, const wchar_t* fileName);
 
     }
 }

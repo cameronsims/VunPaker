@@ -8,7 +8,12 @@
 #define VUNPAKER_DEFAULT_HEIGHT 512
 
 #define VUNPAKER_MENU_FILE "File"
+#define VUNPAKER_MENU_FILE_OPENFILE "Open File(s)"
+#define VUNPAKER_MENU_FILE_CLOSEFILES "Close All Files"
+#define VUNPAKER_MENU_FILE_CLOSEWINDOWS "Close Window"
+
 #define VUNPAKER_MENU_VIEW "View"
+
 #define VUNPAKER_MENU_OPTS "Options"
 
 namespace vpk {

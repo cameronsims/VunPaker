@@ -7,6 +7,8 @@
 #include <vunpaker/gui/vpk_imgui.h>
 #include <vunpaker/gui/winloop.h>
 
+#include <locale>
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,20 +17,26 @@ int wmain(size_t argc, wchar_t** argv) {
     // Initalise GLFW
     vpk::gui::glfw_init();
 
+    // Set local
+    std::locale::global(std::locale(""));  // Set the locale for wide characters
+
     // Create window with graphics context
     GLFWwindow* window = vpk::gui::imgui_init();
     Window::handle_set(window);
 
     // Get exe
-    wchar_t directory[_MAX_PATH] = L"D:\\VunPaker\\temp";
+    const wchar_t BASE_DIRECTORY[_MAX_PATH] = L"D:/VunPaKer/temp";
+    Window::directory_set(BASE_DIRECTORY);
 
-    // Read input
-    if (argc > 1) {
-        // For all files
-        for (size_t i = 0; i < argc - 1; i++) {
-            vpk::file::read(argv[i + 1]);
-        }
-        
+    // For all files
+    for (size_t i = 0; i < argc - 1; i++) {
+        // File value
+        const wchar_t* const FILE_NAME = argv[i + 1];
+
+        // Get the directory of the file's temporary location
+        wchar_t file_directory[_MAX_PATH] = L"";
+        vpk::file::extractFileName(BASE_DIRECTORY, FILE_NAME, file_directory);
+        vpk::file::read(FILE_NAME, file_directory);
     }
     
     // Loop the program until we want to leave

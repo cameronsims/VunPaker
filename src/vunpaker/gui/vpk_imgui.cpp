@@ -52,17 +52,20 @@ void vpk::gui::imgui_setMenubar() {
 
         // If File Menu
         if (ImGui::BeginMenu(VUNPAKER_MENU_FILE)) {
-
-            if (ImGui::MenuItem("Open File(s)")) {
+            // Open a file
+            if (ImGui::MenuItem(VUNPAKER_MENU_FILE_OPENFILE)) {
                 vpk::gui::get_files();
             }
-            if (ImGui::MenuItem("Close All Files")) {
+
+            // Close all the files
+            if (ImGui::MenuItem(VUNPAKER_MENU_FILE_CLOSEFILES)) {
                 Window::vpk_removeAll();
             }
 
             ImGui::Separator();
 
-            if (ImGui::MenuItem("Close Window")) {
+            // Close Window
+            if (ImGui::MenuItem(VUNPAKER_MENU_FILE_CLOSEWINDOWS)) {
                 glfwSetWindowShouldClose(Window::handle_get(), GLFW_TRUE);
             }
 

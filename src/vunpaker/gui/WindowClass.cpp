@@ -29,13 +29,23 @@ void Window::create() {
         ImGui::Begin(window_name, nullptr, ImGuiWindowFlags_NoDocking | ImGuiWindowFlags_MenuBar);
 
         if (ImGui::TreeNode("root")) {
-            ImGui::Text("contents");
+
+
+
             ImGui::TreePop();
         }
 
         // Stop writing to window instance
         ImGui::End();
     }
+}
+
+void Window::directory_get(wchar_t* directory) {
+    wcscpy(directory, m_directory);
+}
+
+void Window::directory_set(const wchar_t* const directory) {
+    wcscpy(m_directory, directory);
 }
 
 GLFWwindow* Window::handle_get() {
@@ -63,6 +73,18 @@ void Window::vpk_removeAll() {
     m_names.clear();
 }
 
+bool Window::file_exists(const wchar_t* const name) {
+    // If exists, return false
+    for (size_t i = 0; i < m_names.size(); i++) {
+        // If found, the file exists
+        if (wcscmp(m_names[i].c_str(), name) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 std::vector<std::wstring> Window::m_names;
 std::vector<vpk::VPK>     Window::m_vpks;
+wchar_t Window::m_directory[_MAX_PATH];
 GLFWwindow* Window::m_handle = nullptr;
